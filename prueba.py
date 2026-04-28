@@ -1,12 +1,39 @@
-suma = 0
-cantidad = 0
+# calcular el puntaje de credito
 
-num = int(input('Ingrese un numero (0 para finalizar): '))
+credito = 0
 
-while num != 0:
-    suma += num
-    cantidad += 1
-    num = int(input('Ingrese un numero (0 para finalizar): '))
+sueldo = int(input("Ingrese su sueldo aproximado"))
 
-print('La suma de todos los numeros es:', suma)
-print('La cantidad de numeros ingresados es:', cantidad)
+if sueldo >= 500000 and sueldo <= 1000000:
+    credito = 300000
+if sueldo <= 1500000:
+    credito = 6500000
+else:
+    credito = 100000 
+
+print("1. Basico")
+print("2. Medio")
+print("3. Superior")
+
+educacion = int(input("Ingrese su nivel educacional "))
+
+if educacion == "1":
+    credito += credito * 1
+if educacion == "2":
+    credito += credito * 1.3
+if educacion == "3":
+    credito += credito * 1.5
+
+nacionalidad = input("Ingrese su nacionalidad (chilena/extranjero)")
+
+if nacionalidad == "chilena" or "chileno":
+    credito += 300000
+if nacionalidad == "extranjero" or "extranjera":
+    print("No hay bono por nacionalidad")
+
+print("Su credito es: ", credito)
+
+
+
+
+              
